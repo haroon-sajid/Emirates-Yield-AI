@@ -67,7 +67,7 @@ export function SocialProofMarquee() {
                   <Star key={j} className="size-3.5 fill-amber-400 text-amber-400" />
                 ))}
               </div>
-              <p className="text-sm text-muted-foreground leading-relaxed mb-3">"{t.text}"</p>
+              <p className="text-sm text-muted-foreground leading-relaxed mb-3">&quot;{t.text}&quot;</p>
               <div className="flex items-center gap-2.5">
                 <div className="flex size-8 items-center justify-center rounded-full bg-gradient-to-br from-blue-500 to-violet-600 text-white text-xs font-bold">
                   {t.name[0]}

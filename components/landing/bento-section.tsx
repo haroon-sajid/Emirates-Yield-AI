@@ -166,7 +166,7 @@ export function BentoSection() {
               <span className="gradient-text">Advantage</span>
             </h2>
             <p className="mt-4 max-w-lg text-lg text-muted-foreground">
-              Six powerful capabilities that turn Dubai's most chaotic market into your personal deal flow.
+              Six powerful capabilities that turn Dubai&apos;s most chaotic market into your personal deal flow.
             </p>
           </div>
           <BarChart3 className="hidden size-12 text-blue-400/20 sm:block" />

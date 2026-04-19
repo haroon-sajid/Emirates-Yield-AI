@@ -42,7 +42,7 @@ export function DemoSection() {
             <div>
               <div className="flex items-center justify-between mb-4">
                 <div>
-                  <h3 className="font-bold text-base">Morning Digest — Today's Top Deals</h3>
+                  <h3 className="font-bold text-base">Morning Digest — Today&apos;s Top Deals</h3>
                   <p className="text-xs text-muted-foreground">Sunday, 20 April 2026 · 89 deals found</p>
                 </div>
                 <span className="flex items-center gap-1.5 rounded-lg border border-emerald-500/30 bg-emerald-500/10 px-3 py-1 text-xs text-emerald-400 font-semibold">

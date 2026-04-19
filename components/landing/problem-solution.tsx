@@ -82,7 +82,7 @@ export function ProblemSection() {
           <span className="amber-gradient-text">Broken</span>
         </h2>
         <p className="mt-5 max-w-2xl mx-auto text-lg text-muted-foreground">
-          The Dubai property market moves fast. Without the right tools, you're always one step behind.
+          The Dubai property market moves fast. Without the right tools, you&apos;re always one step behind.
         </p>
       </motion.div>
 

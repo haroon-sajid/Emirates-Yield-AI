@@ -1,17 +1,10 @@
 "use client"
 
+import Image from "next/image"
 import { motion } from "framer-motion"
-import { ArrowRight, Play, Star } from "lucide-react"
+import { Play } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import { Badge } from "@/components/ui/badge"
 import { usePricingModal } from "@/components/landing/pricing-context"
-
-const avatarColors = [
-  "from-blue-500 to-indigo-600",
-  "from-violet-500 to-purple-600",
-  "from-amber-500 to-orange-600",
-  "from-emerald-500 to-teal-600",
-]
 
 export function HeroSection() {
   const { openModal } = usePricingModal()
@@ -144,11 +137,13 @@ export function HeroSection() {
              >
                {/* Background shape */}
                <div className="absolute inset-0 bg-gradient-to-tr from-blue-600/80 to-cyan-400/80 translate-x-4 translate-y-4" style={{ clipPath: "polygon(15% 0, 100% 0, 85% 100%, 0% 100%)" }} />
-               <img 
+               <Image 
                  src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?q=80&w=600&auto=format&fit=crop" 
-                 className="absolute inset-0 object-cover w-full h-full shadow-lg"
+                 fill
+                 className="object-cover shadow-lg"
                  style={{ clipPath: "polygon(15% 0, 100% 0, 85% 100%, 0% 100%)" }}
                  alt="Dubai architecture"
+                 priority
                />
              </motion.div>
 
@@ -161,12 +156,12 @@ export function HeroSection() {
              >
                {/* Background shape */}
                <div className="absolute inset-0 bg-gradient-to-tr from-violet-600/80 to-purple-400/80 -translate-x-4 translate-y-4" style={{ clipPath: "polygon(10% 0, 100% 0, 90% 100%, 0% 100%)" }} />
-               <img 
+               <Image 
                  src="https://images.pexels.com/photos/3214807/pexels-photo-3214807.jpeg?auto=compress&cs=tinysrgb&w=600" 
-                 className="absolute inset-0 object-cover w-full h-full shadow-lg bg-slate-800"
+                 fill
+                 className="object-cover shadow-lg bg-slate-800"
                  style={{ clipPath: "polygon(10% 0, 100% 0, 90% 100%, 0% 100%)" }}
                  alt="Dubai real estate"
-                 onError={(e) => { e.currentTarget.style.display = 'none'; e.currentTarget.parentElement!.style.background = 'linear-gradient(to top right, #7c3aed, #c084fc)'; }}
                />
              </motion.div>
 

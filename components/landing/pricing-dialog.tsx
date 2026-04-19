@@ -180,9 +180,9 @@ export function PricingDialog() {
                       <div className="mx-auto mb-4 flex size-16 items-center justify-center rounded-full bg-emerald-500/15">
                         <Check className="size-8 text-emerald-400" />
                       </div>
-                      <h3 className="text-xl font-bold mb-2">You're on the list! 🎉</h3>
+                      <h3 className="text-xl font-bold mb-2">You&apos;re on the list! 🎉</h3>
                       <p className="text-sm text-muted-foreground mb-6">
-                        We'll email <strong className="text-foreground">{email}</strong> with your trial access
+                        We&apos;ll email <strong className="text-foreground">{email}</strong> with your trial access
                         within 24 hours.
                       </p>
                       <Button
