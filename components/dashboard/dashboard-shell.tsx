@@ -7,7 +7,6 @@ import {
   BarChart3,
   Calculator,
   ChevronsUpDown,
-  CircleDollarSign,
   Home,
   LifeBuoy,
   LogOut,

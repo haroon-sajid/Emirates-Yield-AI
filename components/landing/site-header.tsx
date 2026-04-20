@@ -4,7 +4,7 @@ import { useState, useEffect } from "react"
 import Link from "next/link"
 import { motion, AnimatePresence } from "framer-motion"
 import { Sparkles, Menu, X } from "lucide-react"
-import { Button } from "@/components/ui/button"
+import { buttonVariants } from "@/components/ui/button"
 import { ThemeToggle } from "@/components/landing/theme-toggle"
 import { cn } from "@/lib/utils"
 
@@ -73,9 +73,13 @@ export function SiteHeader() {
             >
               Sign In
             </Link>
-            <Button asChild id="header-cta" className="hidden h-9 px-5 text-sm font-semibold bg-blue-600 hover:bg-blue-500 text-white shadow-lg shadow-blue-500/25 transition-all hover:-translate-y-0.5 hover:shadow-blue-500/40 sm:inline-flex">
-              <Link href="/signup">Get Started</Link>
-            </Button>
+            <Link
+              id="header-cta"
+              href="/signup"
+              className={`${buttonVariants()} hidden h-9 px-5 text-sm font-semibold bg-blue-600 hover:bg-blue-500 text-white shadow-lg shadow-blue-500/25 transition-all hover:-translate-y-0.5 hover:shadow-blue-500/40 sm:inline-flex`}
+            >
+              Get Started
+            </Link>
             {/* Mobile menu button */}
             <button
               id="mobile-menu-toggle"
@@ -118,11 +122,13 @@ export function SiteHeader() {
               >
                 Sign In
               </Link>
-              <Button asChild className="mt-2 h-10 w-full bg-blue-600 text-white hover:bg-blue-500">
-                <Link href="/signup" onClick={() => setMobileOpen(false)}>
-                  Get Started
-                </Link>
-              </Button>
+              <Link
+                href="/signup"
+                onClick={() => setMobileOpen(false)}
+                className={`${buttonVariants()} mt-2 h-10 w-full bg-blue-600 text-white hover:bg-blue-500`}
+              >
+                Get Started
+              </Link>
             </nav>
           </motion.div>
         )}

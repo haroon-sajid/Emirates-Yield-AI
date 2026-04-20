@@ -4,7 +4,7 @@ import Image from "next/image"
 import Link from "next/link"
 import { motion } from "framer-motion"
 import { ArrowRight, PlayCircle } from "lucide-react"
-import { Button } from "@/components/ui/button"
+import { buttonVariants } from "@/components/ui/button"
 
 export function HeroSection() {
   return (
@@ -88,29 +88,24 @@ export function HeroSection() {
               transition={{ duration: 0.5, delay: 0.18 }}
               className="flex flex-wrap items-center gap-3 sm:gap-4"
             >
-              <Button
-                asChild
-                className="h-12 min-w-[170px] rounded-xl bg-blue-600 px-6 text-sm font-semibold text-white shadow-lg shadow-blue-600/20 transition-all duration-200 hover:-translate-y-0.5 hover:bg-blue-500 hover:shadow-blue-500/40"
+              <Link
+                href="/signup"
+                className={`${buttonVariants()} h-12 min-w-[170px] rounded-xl bg-blue-600 px-6 text-sm font-semibold text-white shadow-lg shadow-blue-600/20 transition-all duration-200 hover:-translate-y-0.5 hover:bg-blue-500 hover:shadow-blue-500/40`}
               >
-                <Link href="/signup">
-                  <span className="inline-flex items-center justify-center gap-2 whitespace-nowrap">
-                    Get Started
-                    <ArrowRight className="size-4 transition-transform duration-200 group-hover/button:translate-x-0.5" />
-                  </span>
-                </Link>
-              </Button>
-              <Button
-                asChild
-                variant="outline"
-                className="h-12 min-w-[170px] rounded-xl border-slate-300/80 bg-white/80 px-6 text-sm font-semibold text-slate-800 shadow-sm backdrop-blur transition-all duration-200 hover:-translate-y-0.5 hover:border-slate-400 hover:bg-white dark:border-white/15 dark:bg-white/5 dark:text-slate-100 dark:hover:border-white/25 dark:hover:bg-white/10"
+                <span className="inline-flex items-center justify-center gap-2 whitespace-nowrap">
+                  Get Started
+                  <ArrowRight className="size-4 transition-transform duration-200 group-hover/button:translate-x-0.5" />
+                </span>
+              </Link>
+              <Link
+                href="#demo"
+                className={`${buttonVariants({ variant: "outline" })} h-12 min-w-[170px] rounded-xl border-slate-300/80 bg-white/80 px-6 text-sm font-semibold text-slate-800 shadow-sm backdrop-blur transition-all duration-200 hover:-translate-y-0.5 hover:border-slate-400 hover:bg-white dark:border-white/15 dark:bg-white/5 dark:text-slate-100 dark:hover:border-white/25 dark:hover:bg-white/10`}
               >
-                <Link href="#demo">
-                  <span className="inline-flex items-center justify-center gap-2 whitespace-nowrap">
-                    <PlayCircle className="size-4" />
-                    View Demo
-                  </span>
-                </Link>
-              </Button>
+                <span className="inline-flex items-center justify-center gap-2 whitespace-nowrap">
+                  <PlayCircle className="size-4" />
+                  View Demo
+                </span>
+              </Link>
             </motion.div>
 
             {/* Stats mimicking reference */}

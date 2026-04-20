@@ -3,7 +3,7 @@
 import { motion } from "framer-motion"
 import { ArrowRight, Play } from "lucide-react"
 import Link from "next/link"
-import { Button } from "@/components/ui/button"
+import { buttonVariants } from "@/components/ui/button"
 
 export function DemoSection() {
   return (
@@ -140,12 +140,14 @@ export function DemoSection() {
             Join 127+ investors getting the best Dubai deals delivered daily. Start your 7-day free trial — no credit card needed.
           </p>
           <div className="flex flex-wrap items-center justify-center gap-4">
-            <Button asChild id="demo-cta-trial" size="lg" className="h-12 px-8 text-base font-semibold bg-blue-600 hover:bg-blue-500 text-white shadow-lg shadow-blue-500/30 hover:-translate-y-1 hover:shadow-xl hover:shadow-blue-500/40 transition-all duration-200">
-              <Link href="/signup">
-                Get Started
-                <ArrowRight className="ml-2 size-4" />
-              </Link>
-            </Button>
+            <Link
+              href="/signup"
+              id="demo-cta-trial"
+              className={`${buttonVariants({ size: "lg" })} h-12 px-8 text-base font-semibold bg-blue-600 hover:bg-blue-500 text-white shadow-lg shadow-blue-500/30 hover:-translate-y-1 hover:shadow-xl hover:shadow-blue-500/40 transition-all duration-200`}
+            >
+              Get Started
+              <ArrowRight className="ml-2 size-4" />
+            </Link>
             <a
               href="#how-it-works"
               id="demo-cta-how"
