@@ -9,18 +9,17 @@ import {
   Plug,
   Radar,
   SlidersHorizontal,
-  BarChart3,
 } from "lucide-react"
 
 const cards = [
   {
     icon: Radar,
-    title: "Real-Time Scraping",
-    body: "Listings ingested from Bayut & Property Finder on a 6-hour cadence — 24 hours a day, 7 days a week.",
+    title: "Market Intelligence Feed",
+    body: "Opportunities are evaluated continuously through our AI engine to surface only investment-grade properties.",
     span: "lg:col-span-2",
     extra: (
       <div className="mt-4 flex flex-wrap gap-2 text-xs font-semibold">
-        {["Bayut", "Property Finder", "Dubizzle"].map((s) => (
+        {["AI Verified", "Investor Ready", "Off-Market Access"].map((s) => (
           <span
             key={s}
             className="rounded-lg border border-white/10 bg-white/5 px-3 py-1.5 text-muted-foreground"
@@ -29,7 +28,7 @@ const cards = [
           </span>
         ))}
         <span className="rounded-lg border border-emerald-500/30 bg-emerald-500/10 px-3 py-1.5 text-emerald-400">
-          Live ●
+          Live AI ●
         </span>
       </div>
     ),
@@ -149,14 +148,14 @@ const cards = [
 
 export function BentoSection() {
   return (
-    <section id="features" className="mx-auto max-w-7xl px-4 py-16 md:py-20 scroll-mt-20 sm:px-6 lg:px-8">
+    <section id="ai-tools" className="mx-auto max-w-7xl px-4 py-16 md:py-20 scroll-mt-20 sm:px-6 lg:px-8">
       <motion.div
         initial={{ opacity: 0, y: 16 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         className="mb-14"
       >
-        <div className="flex flex-wrap items-end justify-between gap-4">
+        <div className="mx-auto max-w-5xl text-center">
           <div>
             <p className="text-sm font-semibold uppercase tracking-widest text-blue-400 mb-3">
               Features
@@ -165,11 +164,10 @@ export function BentoSection() {
               Your Unfair{" "}
               <span className="gradient-text">Advantage</span>
             </h2>
-            <p className="mt-4 max-w-lg text-lg text-muted-foreground">
+            <p className="mt-4 text-lg text-muted-foreground md:whitespace-nowrap">
               Six powerful capabilities that turn Dubai&apos;s most chaotic market into your personal deal flow.
             </p>
           </div>
-          <BarChart3 className="hidden size-12 text-blue-400/20 sm:block" />
         </div>
       </motion.div>
 

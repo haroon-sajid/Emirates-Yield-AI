@@ -14,7 +14,7 @@ const problems = [
   {
     icon: Clock,
     title: "Hours Wasted Every Day",
-    body: "Manually checking 50+ portals daily wastes 3-4 hours you should spend closing deals — not hunting.",
+    body: "Manual deal research across scattered listings and spreadsheets wastes hours you should spend closing deals.",
     color: "text-red-400",
     bg: "bg-red-400/10",
     border: "border-red-400/20",
@@ -42,9 +42,9 @@ const steps = [
     icon: Bot,
     step: "01",
     title: "Scan",
-    subtitle: "AI scans every listing",
-    body: "Our system ingests thousands of listings from Bayut & Property Finder every 6 hours, 24/7.",
-    features: ["1,000+ listings/day", "Bayut & Property Finder", "6-hour refresh cadence"],
+    subtitle: "AI scans market opportunities",
+    body: "Our system evaluates thousands of Dubai opportunities daily and prioritizes listings by investor fit.",
+    features: ["1,000+ opportunities/day", "AI fit scoring", "Daily refresh cadence"],
     color: "from-blue-500 to-cyan-500",
     glow: "shadow-blue-500/20",
   },
@@ -137,7 +137,7 @@ export function SolutionSection() {
             Emirates Yield Does the{" "}
             <span className="gradient-text">Heavy Lifting</span>
           </h2>
-          <p className="mt-5 max-w-2xl mx-auto text-lg text-muted-foreground">
+          <p className="mt-5 mx-auto text-lg text-muted-foreground md:whitespace-nowrap">
             Three steps. Zero manual work. Only the deals that match your criteria, delivered daily.
           </p>
         </motion.div>

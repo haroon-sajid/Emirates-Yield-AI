@@ -50,8 +50,9 @@ export function StatsSection() {
 
   return (
     <section
+      id="insights"
       ref={ref}
-      className="relative border-y border-white/8 py-12 md:py-16 overflow-hidden"
+      className="relative border-y border-white/8 py-12 md:py-16 overflow-hidden scroll-mt-20"
       style={{
         background:
           "linear-gradient(180deg, rgba(37,99,235,0.04) 0%, transparent 100%)",

@@ -6,19 +6,17 @@ import { motion, AnimatePresence } from "framer-motion"
 import { Sparkles, Menu, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { ThemeToggle } from "@/components/landing/theme-toggle"
-import { usePricingModal } from "@/components/landing/pricing-context"
 import { cn } from "@/lib/utils"
 
 const navLinks = [
-  { label: "Home", href: "/" },
-  { label: "Features", href: "#features" },
-  { label: "How It Works", href: "#how-it-works" },
-  { label: "Demo", href: "#demo" },
-  { label: "Pricing", href: "#pricing" },
+  { label: "Home", href: "#home" },
+  { label: "AI Tools", href: "#ai-tools" },
+  { label: "Insights", href: "#insights" },
+  { label: "About", href: "#about" },
+  { label: "Contact", href: "#contact" },
 ]
 
 export function SiteHeader() {
-  const { openModal } = usePricingModal()
   const [scrolled, setScrolled] = useState(false)
   const [mobileOpen, setMobileOpen] = useState(false)
 
@@ -69,13 +67,14 @@ export function SiteHeader() {
           {/* Right side */}
           <div className="flex items-center gap-2">
             <ThemeToggle />
-            <Button
-              id="header-cta"
-              type="button"
-              onClick={() => openModal("premium")}
-              className="hidden h-9 px-5 text-sm font-semibold bg-blue-600 hover:bg-blue-500 text-white shadow-lg shadow-blue-500/25 transition-all hover:-translate-y-0.5 hover:shadow-blue-500/40 sm:inline-flex"
+            <Link
+              href="/signin"
+              className="hidden h-9 items-center rounded-lg border border-slate-200 px-4 text-sm font-semibold text-slate-700 transition-all hover:-translate-y-0.5 hover:bg-slate-100 dark:border-white/15 dark:text-slate-100 dark:hover:bg-white/10 sm:inline-flex"
             >
-              Start Free Trial
+              Sign In
+            </Link>
+            <Button asChild id="header-cta" className="hidden h-9 px-5 text-sm font-semibold bg-blue-600 hover:bg-blue-500 text-white shadow-lg shadow-blue-500/25 transition-all hover:-translate-y-0.5 hover:shadow-blue-500/40 sm:inline-flex">
+              <Link href="/signup">Get Started</Link>
             </Button>
             {/* Mobile menu button */}
             <button
@@ -112,12 +111,17 @@ export function SiteHeader() {
                   {l.label}
                 </Link>
               ))}
-              <Button
-                type="button"
-                onClick={() => { openModal("premium"); setMobileOpen(false) }}
-                className="mt-2 w-full bg-blue-600 hover:bg-blue-500 text-white"
+              <Link
+                href="/signin"
+                onClick={() => setMobileOpen(false)}
+                className="mt-2 flex h-10 w-full items-center justify-center rounded-lg border border-slate-200 text-sm font-semibold text-slate-700 transition-colors hover:bg-slate-100 dark:border-white/15 dark:text-slate-100 dark:hover:bg-white/10"
               >
-                Start Free Trial
+                Sign In
+              </Link>
+              <Button asChild className="mt-2 h-10 w-full bg-blue-600 text-white hover:bg-blue-500">
+                <Link href="/signup" onClick={() => setMobileOpen(false)}>
+                  Get Started
+                </Link>
               </Button>
             </nav>
           </motion.div>

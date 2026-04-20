@@ -1,16 +1,17 @@
 "use client"
 
 import Image from "next/image"
+import Link from "next/link"
 import { motion } from "framer-motion"
-import { Play } from "lucide-react"
+import { ArrowRight, PlayCircle } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import { usePricingModal } from "@/components/landing/pricing-context"
 
 export function HeroSection() {
-  const { openModal } = usePricingModal()
-
   return (
-    <section className="relative overflow-hidden pt-16 pb-12 sm:pt-20 sm:pb-16 lg:pt-24 lg:pb-16">
+    <section
+      id="home"
+      className="relative overflow-hidden pt-16 pb-12 sm:pt-20 sm:pb-16 lg:pt-24 lg:pb-16"
+    >
       {/* ── Animated background ── */}
       <div className="pointer-events-none absolute inset-0 -z-10">
         {/* Radial gradient base */}
@@ -76,28 +77,39 @@ export function HeroSection() {
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="max-w-xl text-lg text-slate-600 dark:text-muted-foreground leading-relaxed mb-10"
+              className="max-w-xl text-lg text-slate-600 dark:text-muted-foreground leading-relaxed mb-8"
             >
-              AI-powered deal analyzer for Dubai real estate that scans 1,000+ listings daily. Stop scrolling portals. Start owning the advantage.
+              AI-powered Dubai property intelligence that ranks investment opportunities with verified ROI, risk, and growth signals.
             </motion.p>
 
             <motion.div
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-              className="flex w-full max-w-md items-center rounded-full border border-slate-200 dark:border-white/10 bg-white dark:bg-white/5 p-1.5 shadow-sm"
+              transition={{ duration: 0.5, delay: 0.18 }}
+              className="flex flex-wrap items-center gap-3 sm:gap-4"
             >
-              <input 
-                type="text" 
-                placeholder="Search property you want"
-                className="flex-1 bg-transparent px-4 text-sm outline-none placeholder:text-muted-foreground dark:text-white"
-              />
               <Button
-                type="button"
-                onClick={() => openModal("premium")}
-                className="h-11 px-7 rounded-full bg-blue-600 hover:bg-blue-500 text-white font-semibold transition-all shadow-md shadow-blue-600/20"
+                asChild
+                className="h-12 min-w-[170px] rounded-xl bg-blue-600 px-6 text-sm font-semibold text-white shadow-lg shadow-blue-600/20 transition-all duration-200 hover:-translate-y-0.5 hover:bg-blue-500 hover:shadow-blue-500/40"
               >
-                Search
+                <Link href="/signup">
+                  <span className="inline-flex items-center justify-center gap-2 whitespace-nowrap">
+                    Get Started
+                    <ArrowRight className="size-4 transition-transform duration-200 group-hover/button:translate-x-0.5" />
+                  </span>
+                </Link>
+              </Button>
+              <Button
+                asChild
+                variant="outline"
+                className="h-12 min-w-[170px] rounded-xl border-slate-300/80 bg-white/80 px-6 text-sm font-semibold text-slate-800 shadow-sm backdrop-blur transition-all duration-200 hover:-translate-y-0.5 hover:border-slate-400 hover:bg-white dark:border-white/15 dark:bg-white/5 dark:text-slate-100 dark:hover:border-white/25 dark:hover:bg-white/10"
+              >
+                <Link href="#demo">
+                  <span className="inline-flex items-center justify-center gap-2 whitespace-nowrap">
+                    <PlayCircle className="size-4" />
+                    View Demo
+                  </span>
+                </Link>
               </Button>
             </motion.div>
 
@@ -105,8 +117,8 @@ export function HeroSection() {
             <motion.div
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.3 }}
-              className="mt-12 flex flex-wrap items-center gap-x-12 gap-y-6 pt-8 border-t border-slate-200 dark:border-white/10"
+              transition={{ duration: 0.5, delay: 0.24 }}
+              className="mt-8 flex flex-wrap items-center gap-x-12 gap-y-6 border-t border-slate-200 pt-8 dark:border-white/10"
             >
                <div>
                   <p className="text-sm font-medium text-slate-500 dark:text-muted-foreground mb-1">Properties Analyzed</p>
@@ -156,8 +168,8 @@ export function HeroSection() {
              >
                {/* Background shape */}
                <div className="absolute inset-0 bg-gradient-to-tr from-violet-600/80 to-purple-400/80 -translate-x-4 translate-y-4" style={{ clipPath: "polygon(10% 0, 100% 0, 90% 100%, 0% 100%)" }} />
-               <Image 
-                 src="https://images.pexels.com/photos/3214807/pexels-photo-3214807.jpeg?auto=compress&cs=tinysrgb&w=600" 
+              <Image 
+                src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=600&auto=format&fit=crop" 
                  fill
                  className="object-cover shadow-lg bg-slate-800"
                  style={{ clipPath: "polygon(10% 0, 100% 0, 90% 100%, 0% 100%)" }}
@@ -179,8 +191,8 @@ export function HeroSection() {
                    <textPath href="#circlePath" startOffset="0%">WATCH OUR VIDEO • WATCH OUR VIDEO • </textPath>
                  </text>
                </svg>
-               <div className="size-16 bg-blue-600 text-white rounded-full flex items-center justify-center relative z-10 shadow-inner border-[3px] border-slate-900 dark:border-white">
-                  <Play className="size-5 ml-1 fill-white" />
+                 <div className="size-16 bg-blue-600 text-white rounded-full flex items-center justify-center relative z-10 shadow-inner border-[3px] border-slate-900 dark:border-white">
+                  <PlayCircle className="size-5 ml-1 fill-white" />
                </div>
              </motion.div>
 
